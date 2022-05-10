@@ -3,6 +3,8 @@
 #define _USE_MATH_DEFINES
 #include <math.h>
 
+#include "Bullet.h"
+
 Spaceship::Spaceship()
 {
 	setPointCount(3);
@@ -56,6 +58,9 @@ void Spaceship::movement(sf::Event event)
     }
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
         rotate(0.05f);
+    }
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space)) {
+        Bullet bullet = Bullet(getRotation(), getPosition());
     }
 }
 

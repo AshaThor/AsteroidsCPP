@@ -1,12 +1,15 @@
 
 #include <SFML/Graphics.hpp>
 #include "Spaceship.h"
-#include "Movement.h"
+
+
 
 
 int main()
 {
-    sf::RenderWindow window(sf::VideoMode(800, 600), "Simple Game", sf::Style::Close);
+    sf::ContextSettings settings;
+    settings.antialiasingLevel = 8;
+    sf::RenderWindow window(sf::VideoMode(800, 600), "Simple Game", sf::Style::Close, settings);
     sf::RectangleShape rectangle(sf::Vector2f(200.f, 300.f));
     rectangle.setSize(sf::Vector2f(100.f,100.f));
     Spaceship player = Spaceship();
