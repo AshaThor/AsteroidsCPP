@@ -7,5 +7,5 @@ class Bullet : public sf::RectangleShape
 {
 public:
 	Bullet(float rotationInDegrees, sf::Vector2f location);
-	void Draw();
+	void draw(sf::RenderTarget target, sf::RenderStates states) const;
 };

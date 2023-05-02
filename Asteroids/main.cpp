@@ -1,5 +1,7 @@
 
 #include <SFML/Graphics.hpp>
+
+#include "Bullet.h"
 #include "Spaceship.h"
 
 
@@ -26,6 +28,12 @@ int main()
         }
         player.movement(event);
         window.clear(sf::Color::Black);
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space)) {
+            Bullet bullet = Bullet(player.getRotation(), player.getPosition());
+            window.draw(bullet);
+        }
+        // Do I pass the window from here to the bullet for magical happiness?
+        
         window.draw(player);
         window.display();
     }
